@@ -8,14 +8,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Renan Torres",
+  "author": "Joao Reis",
   "license": "MIT",
-  "description": "",
+  "description": "Código das aulas de typescript back do instituto Infnet",
+
   "devDependencies": {
-    "@types/node": "^24.2.0",
+    "@types/node": "^24.5.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
+
   "dependencies": {
     "express": "^5.1.0"
   }

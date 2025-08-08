@@ -1,16 +1,13 @@
 # Procedimento para iniciar
-
 Para visualizar melhor este arquivo aperte ctrl + shit + v
 
 ## Dependências para este projeto
-
 As seguintes versões foram utilizadas neste projeto:
 
-- node@22.4.0
-- npm@10.8.1
+- node@22.16.0
+- npm@10.9.2
 
 ## Instalação inicial do projeto
-
 1. Inicialize o projeto de node.js executando o comando abaixo no terminal:
 
 ```bash
@@ -27,12 +24,12 @@ Será criado uma arquivo package.json na raiz do seu diretório. Exemplo do resu
   "name": "tsbackend",
   "version": "0.0.1",
   "description": "Código das aulas de typescript back do instituto Infnet",
-  "main": "src/index.ts",
+  "main": "src/mais.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Renan Torres",
-  "license": "ISC"
+  "author": "Joao Reis",
+  "license": "MIT"
 }
 ```
 
@@ -69,11 +66,9 @@ npm install --save-dev ts-node-dev
 }
 ```
 
-
 ## Configurações
 
 ### No arquivo tsconfig.json (se encontra na raíz do projeto)
-
 1. Descomente a linha '"rootDir": "./",' (remova os '//' antes da linha) ;
 
 2. Altere o  '"rootDir": "./",' para  '"rootDir": "./src",'.
@@ -201,6 +196,3 @@ Adiciona um script para o lint:
     }
 }
 ```
-
-
-
