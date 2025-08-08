@@ -1,3 +1,14 @@
+//CRUD
+
+//CRUD - CREATE
+function criarUsuario(usuario: Usuario): UsuarioSchema[]{
+    usuarios.push({...usuario});
+    return usuarios;
+}
+const usuario = new Usuario('Paulo', true, 1230n);
+console.log(criarUsuario(usuario));
+
+
 //CRUD - READ
 import {Usuario, usuarios, UsuarioSchema}  from './usuarios';
 
@@ -13,14 +24,6 @@ function retornaUsuarioPorId (id: number): UsuarioSchema | undefined {
     console.log('tipo do id =', typeof id);
     return usuarios.find(user => user.id === id);
 }
-
-//CRUD - CREATE
-function criarUsuario(usuario: Usuario): UsuarioSchema[]{
-    usuarios.push({...usuario});
-    return usuarios;
-}
-const usuario = new Usuario('Paulo', true, 1230n);
-console.log(criarUsuario(usuario));
 
 
 //CRUD - UPDATE
@@ -40,6 +43,7 @@ function atualizarUsuario (id: number, dadosAtualizacao: UsuarioSchema): Usuario
 
     return usuarios[indiceUsuario];
 }
+
 
 //CRUD - DELETE
 function deletaUsuario(id: number): UsuarioSchema | undefined{
