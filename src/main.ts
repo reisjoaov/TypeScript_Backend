@@ -1,4 +1,6 @@
 //CRUD
+import {Usuario, usuarios, UsuarioSchema}  from './usuarios';
+
 
 //CRUD - CREATE
 function criarUsuario(usuario: Usuario): UsuarioSchema[]{
@@ -10,20 +12,17 @@ console.log(criarUsuario(usuario));
 
 
 //CRUD - READ
-import {Usuario, usuarios, UsuarioSchema}  from './usuarios';
-
-function mostraEmTela(): void {
-    console.log("exibindo em tela");
-}
-
 // hoisting
 function retornaUsuarios () {
     return usuarios;
 }
+//console.log(retornaUsuarios());
+
 function retornaUsuarioPorId (id: number): UsuarioSchema | undefined {
     console.log('tipo do id =', typeof id);
     return usuarios.find(user => user.id === id);
 }
+//console.log(retornaUsuarioPorId(124));
 
 
 //CRUD - UPDATE

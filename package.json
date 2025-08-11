@@ -11,13 +11,12 @@
   "author": "Joao Reis",
   "license": "MIT",
   "description": "Código das aulas de typescript back do instituto Infnet",
-
   "devDependencies": {
-    "@types/node": "^24.5.0",
+    "@types/node": "^24.2.1",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   },
-
   "dependencies": {
     "express": "^5.1.0"
   }
