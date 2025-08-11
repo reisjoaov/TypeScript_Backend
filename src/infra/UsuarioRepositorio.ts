@@ -43,6 +43,4 @@ export default class UsuarioRepositorio {
         this.reescreverBD(bdAtualizado);
         return usuarios;
     }
-
-
 }
