@@ -1,5 +1,5 @@
 export const usuarios: UsuarioSchema[] = [
-    { 
+    {
        id: 123,
        nome: 'Renan',
        ativo: false,
