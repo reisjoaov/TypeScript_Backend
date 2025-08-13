@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { DBSchema } from "./DBSchema";
-import { Usuario, UsuarioSchema } from "../usuarios";
+import { Usuario } from "../usuarios";
 
 export default class UsuarioRepositorio {
     private caminhoArquivo: string;
@@ -35,7 +35,7 @@ export default class UsuarioRepositorio {
         }
     }
 
-    public criarUsuario(usuario: Usuario): UsuarioSchema[]{
+    public criarUsuario(usuario: UsuarioSchema): UsuarioSchema[]{
         const usuarios = this.getUsuarios();
         usuarios.push({...usuario});
         const bdAtualizado = this.acessoDB();

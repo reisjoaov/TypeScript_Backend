@@ -1,6 +1,6 @@
 //CRUD
-
-import { Usuario, usuarios, UsuarioSchema } from "../../usuarios";
+import UsuarioRepositorio from "../../infra/UsuarioRepositorio";
+import { /*Usuario, usuarios,*/ UsuarioSchema } from "../../infra/UsuarioSchema";
 
 //CRUD - CREATE
 function criarUsuario(usuario: Usuario): UsuarioSchema[]{
