@@ -1,4 +1,3 @@
-import { Z_UNKNOWN } from "zlib";
 import UsuarioRepositorio from "./infra/UsuarioRepositorio";
 import { Usuario } from "./usuarios";
 import express, {Request, Response} from "express";

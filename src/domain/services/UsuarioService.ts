@@ -1,55 +1,58 @@
 //CRUD
 import UsuarioRepositorio from "../../infra/UsuarioRepositorio";
-import { /*Usuario, usuarios,*/ UsuarioSchema } from "../../infra/UsuarioSchema";
+import { UsuarioSchema } from "../../infra/UsuarioSchema";
+import { Usuario } from "../../usuarios";
 
-//CRUD - CREATE
-function criarUsuario(usuario: Usuario): UsuarioSchema[]{
-    usuarios.push({...usuario});
-    return usuarios;
-}
+const usuarioRepositorio = new UsuarioRepositorio();
 
 //CRUD - READ
-// hoisting
-function retornaUsuarios () {
-    return usuarios;
+//hoisting
+function retornaUsuarios (){
+    return usuarioRepositorio.getUsuarios();
 }
-//console.log(retornaUsuarios());
 
 function retornaUsuarioPorId (id: number): UsuarioSchema | undefined {
-    console.log('tipo do id =', typeof id);
-    return usuarios.find(user => user.id === id);
+    //console.log('tipo do id =', typeof id);
+    return usuarioRepositorio.getUsuarioPorId(id);
 }
-//console.log(retornaUsuarioPorId(124));
 
+//CRUD - CREATE
+function criarUsuario(usuario: Usuario): UsuarioSchema[] {
+    const usuarios = usuarioRepositorio.criarUsuario(usuario);
+    return usuarios;
+}
 
 //CRUD - UPDATE
 function atualizarUsuario (id: number, dadosAtualizacao: UsuarioSchema): UsuarioSchema | undefined {
-    const indiceUsuario = usuarios.findIndex(user => user.id ===id);
+    const usuario = usuarioRepositorio.getUsuarioPorId(id);
 
-    if (indiceUsuario === -1){
+    if (usuario){
         console.log(`Usuário com ID ${id} não encontrado`);
         return;
     }
 
-    //Atualiza apenas os campos fornecidos
-    usuarios[indiceUsuario] = {
-        ...usuarios[indiceUsuario],
-        ...dadosAtualizacao
-    };
+    throw new Error ('Not implemented');
 
-    return usuarios[indiceUsuario];
+    //Atualiza apenas os campos fornecidos
+    //usuarios[indiceUsuario] = {
+    //    ...usuarios[indiceUsuario],
+    //    ...dadosAtualizacao
+    //};
+
+    //return usuarios[indiceUsuario];
 }
 
-
 //CRUD - DELETE
+/*
 function deletaUsuario(id: number): UsuarioSchema | undefined{
-    const indiceUsuario = usuarios.findIndex(user => user.id === id);
+    const usuario = usuarioRepositorio.getUsuarioPorId(id);
 
-    if (indiceUsuario === -1){
+    if (usuario){
         console.log (`Usuário com ID ${id} não encontrado`);
     }
 
     //Remove o usuário do Array e retorno o usuário removido
-    const usuarioRemovido = usuarios.splice(indiceUsuario, 1)[0];
+    const usuarioRemovido = usuarios.splice(usuario, 1)[0];
     return usuarioRemovido;
 }
+*/
