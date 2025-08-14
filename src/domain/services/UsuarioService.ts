@@ -32,13 +32,11 @@ function atualizarUsuario (id: number, dadosAtualizacao: UsuarioSchema): Usuario
     }
 
     throw new Error ('Not implemented');
-
     //Atualiza apenas os campos fornecidos
     //usuarios[indiceUsuario] = {
     //    ...usuarios[indiceUsuario],
     //    ...dadosAtualizacao
     //};
-
     //return usuarios[indiceUsuario];
 }
 
