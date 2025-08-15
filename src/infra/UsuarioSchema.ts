@@ -3,5 +3,5 @@ export type UsuarioSchema = {
     nome: string,
     ativo: boolean,
     saldo?: bigint,
-    numeroDoc?: number,
+    KAMV?: number,
 }

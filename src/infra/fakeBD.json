@@ -1,1 +1,13 @@
-{"users":[{"id":123,"nome":"Renan","ativo":true,"senha":"secreta"},{"id":124,"nome":"Jessica","ativo":false}, {"id":122,"nome":"Reis","ativo":true},{"ativo":true,"id":94,"nome":"Moura","senha":"minha senha"}, {"ativo":false,"id":15,"nome":"Givanildo","senha":"minha senha"}]}
+{
+    "users":[
+        {
+            "id":123,"nome":"Renan","ativo":true,"senha":"secreta"
+        },{
+            "id":124,"nome":"Jessica","ativo":false
+        },{
+            "id":125,"nome":"Moura", "ativo":true, "senha":"minha senha"
+        },{
+            "id":126,"nome":"Givanildo", "ativo":false, "senha":"minha senha"
+        }
+    ]
+}

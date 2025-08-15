@@ -6,8 +6,9 @@ export class Usuario {
     numeroDoc?: number;
     senha?: string;
 
-    constructor(nome: string, ativo: boolean, saldo?: bigint, numeroDoc?: number) {
-        this.id = Math.round (Math.random()*100);
+    constructor(id: number, nome: string, ativo: boolean, saldo?: bigint, numeroDoc?: number) {
+        //this.id = Math.round (Math.random()*100);
+        this.id = id;
         this.nome = nome;
         this.ativo = ativo;
         this.saldo = saldo;
@@ -16,9 +17,7 @@ export class Usuario {
     }
 }
 
-
 //DTO - Data Transfer Object
-
 export type CriarUsuarioDTO = {
     nome: string;
     ativo: boolean;
