@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import UsuarioRepositorio from '../infra/UsuarioRepositorio';
-import { CriarUsuarioDTO, Usuario, ViewUsuarioDTO } from '../usuarios';
+import { atualizarUsuarioDTO, CriarUsuarioDTO, Usuario, ViewUsuarioDTO } from '../usuarios';
 import { UsuarioSchema } from '../infra/UsuarioSchema';
 
 class UsuarioController{
@@ -16,8 +16,11 @@ class UsuarioController{
         this.router.get('/', this.buscarUsuarios.bind(this));
         this.router.get('/:id', this.buscarUsuariosPorId.bind(this));
         this.router.post('/', this.criarUsuario.bind(this));
-        this.router.post('/:id', this.deletarUsuarioPorId.bind(this));
+        this.router.patch('/:id', this.atualizarUsuariosPorId.bind(this));
+        this.router.delete('/:id', this.deletarUsuarioPorId.bind(this));
     }
+
+    //TODO: Validar bodies libs: Express validator ou Class validator
 
     public buscarUsuarios(req: Request, res: Response) {
         const usuarios: UsuarioSchema[] = this.usuarioRepositorio.getUsuarios();
@@ -66,6 +69,29 @@ class UsuarioController{
         this.usuarioRepositorio.criarUsuario(usuario);
         usuarios = this.usuarioRepositorio.getUsuarios();
         res.json(usuarios);
+    }
+
+    public atualizarUsuariosPorId (req: Request, res: Response){
+        const id = req.params.id;
+        if (!id) {
+            res.json('Id não enviado');
+            return;
+        }
+
+        const dadosUsuario: atualizarUsuarioDTO = req.body;
+        const usuario = this.usuarioRepositorio.atualizarUsuario(+id, dadosUsuario);
+
+        if (usuario) {
+            const usuarioDto: ViewUsuarioDTO = {
+                nome: usuario.nome,
+                ativo: usuario.ativo,
+                numeroDoc: usuario.KAMV,
+            };
+            
+            res.json(usuarioDto);
+            return;
+        }
+        res.json('Usuário não encontrado');
     }
 
 
